@@ -22,3 +22,21 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.filter{
+	margin-left: 20px;
+}
+.filter-input{
+	margin-left: 20px;
+	padding: 5px 10px;
+}
+.filter-label{
+	font-weight: bold;
+}
+
+.marker-label{
+	display:none;
+	font-size: 7px;
+}
+.marker-container:hover .marker-label{
+ 	display:block;
+}
