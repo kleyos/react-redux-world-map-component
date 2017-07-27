@@ -22,6 +22,7 @@ class WorldMap extends Component {
 		fetch("https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
 			.then(response => response.json())
 			.then(worldData => fetchDataMap( feature(worldData, worldData.objects.countries).features ))
+		
 	}
 	render() {
 		return (
