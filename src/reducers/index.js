@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import worldData from './fetch-data-map'
+import { worldData, population } from './fetch-data'
 
-const rootReducer = combineReducers({ worldData })
+const rootReducer = combineReducers({ worldData, population })
 
 export default rootReducer

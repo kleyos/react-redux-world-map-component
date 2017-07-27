@@ -1,1 +1,1 @@
-export { fetchDataMap } from './fetch-data-map'
+export { fetchDataMap, fetchDataPop  } from './fetch-data'
