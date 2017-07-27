@@ -1,0 +1,1 @@
+export { fetchDataMap } from './fetch-data-map'
