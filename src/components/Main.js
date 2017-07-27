@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-//import Datamap from 'datamaps'
+import { feature } from "topojson-client"
 
-import logo from '../styles/logo.svg';
-import '../styles/App.css';
-
+import '../styles/Main.css';
 import WorldMap from './world-map'
-//import Map from './components/map'
-class App extends Component {
-	// componentDidMount(){
-	// 	return <Map />
-	// }
+import FilterInput from './filter-input'
+
+class Main extends Component {
+
+	componentDidMount() {
+		const { fetchDataMap, fetchDataPop } = this.props
+		fetch("https://raw.githubusercontent.com/d3/d3.github.com/master/world-110m.v1.json")
+			.then(response => response.json())
+			.then(worldData => fetchDataMap( feature(worldData, worldData.objects.countries).features ))
+
+		fetch("https://raw.githubusercontent.com/kleyos/react-redux-world-map-component/master/src/utils/population.json")
+				.then(response => response.json())
+				.then(population => fetchDataPop(population))
+	}
 	render() {
-		//const map = new Datamap({element:document.getElementById("map")})
 		return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="Main">
+				<FilterInput {...this.props}/>
 				<WorldMap style={{ height:800 }} {...this.props}/>
       </div>
     );
   }
 }
 
-export default App;
+export default Main;
