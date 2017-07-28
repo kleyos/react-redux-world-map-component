@@ -40,3 +40,22 @@
 .marker-container:hover .marker-label{
  	display:block;
 }
+.carousel{
+	padding: 1.5rem;
+	margin-bottom: 1rem;
+	background: lightgrey;
+}
+.carousel-item img{
+	margin: 0 auto;
+}
+.carousel-indicators li{
+	width: 10px;
+	height:10px;
+	flex-grow: 0;
+	border-radius: 100%;
+}
+.section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

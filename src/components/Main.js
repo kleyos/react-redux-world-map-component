@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { feature } from "topojson-client"
 
 import '../styles/Main.css';
+
 import WorldMap from './world-map'
 import FilterInput from './filter-input'
+import Navbar from './navbar'
+import Carousel from './carousel'
+import Work from './work'
 
 class Main extends Component {
 
@@ -20,6 +24,9 @@ class Main extends Component {
 	render() {
 		return (
       <div className="Main">
+				<Navbar />
+				<Carousel />
+				<Work />
 				<FilterInput {...this.props}/>
 				<WorldMap style={{ height:800 }} {...this.props}/>
       </div>
